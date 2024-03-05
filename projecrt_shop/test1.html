@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>表單示例</title>
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+        <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/templatemo.js"></script>
+        <script src="assets/js/custom.js"></script>
+    <script type="text/javascript">
+        
+        
+        var m=0;
+        function doCheck() {
+            // 做其他檢查...
+
+            // 檢查帳號
+            if (!doCheckAcc()) {
+                m=m+1;
+                console.log("壞掉次數"+m);
+                //return false; // 阻止表單提交
+                }
+             else{
+             m=0;
+             }
+
+            //做其他檢查...
+            if(m>0){
+                return false;
+            }else{
+                return true; // 允許表單提交
+            }
+            //return true; 
+        }
+    </script>
+</head>
+<body>
+    <section id="formArea" class="formSec">
+        <div class="innerWrap">
+            <h3 class="ffJosefin">Sign Up</h3>
+            <form name="signup" method="get" onsubmit="return doCheck()" action="signup_submit.php">
+
+                <div>
+                    <label>User Account<font color="red"> *</font></label>
+                    <p class="memo">
+                        * To protect your personal information, once the user account is set, it cannot be changed.<br>
+                        * Make the user account between 6 and 10 characters, which contain lowercase, uppercase letters and numbers."
+                    </p>
+                    <input type="text" id="userAcc" name="userAcc" required >
+                    <p id="acc_msg"></p>
+
+                    <script>
+                        function doCheckAcc() {
+                            var userAcc = document.getElementById('userAcc').value;
+                            var acclen = userAcc.length;
+
+                            if (6 > acclen) {
+                                $("#acc_msg").html("<font color='red'>This account name is too short. </font>");
+                                return false;
+                            } else if (acclen > 10) {
+                                $("#acc_msg").html("<font color='red'>This account name is too long. </font>");
+                                return false;
+                            } else if (userAcc.match(/\d/)) {
+                                if (userAcc.match(/[a-z]/) && userAcc.match(/[A-Z]/)) {
+                                    $("#acc_msg").html("<font color='green'>This account name is available. </font>");
+                                                 
+                                    
+                                    return true;
+                                    // $.ajax({
+                                    //     type: 'post',
+                                    //     url: 'checkAcc.php',
+                                    //     data: {
+                                    //         userAcc: userAcc
+                                    //     },
+                                    //     success: function(msg) {
+                                    //         if (msg == "Nah") {
+                                    //             $("#acc_msg").html("<font color='red'>This account name has been used. </font>");
+                                    //             return false;
+                                    //         } else {
+                                    //             $("#acc_msg").html("<font color='green'>This account name is available. </font>");
+                                    //             return true;
+                                    //         }
+                                    //     }
+                                    // });
+                                } else {
+                                    $("#acc_msg").html("<font color='red'>Please use lowercase, uppercase letters and numbers.</font>");
+                                    return false;
+                                }
+                            } else {
+                                $("#acc_msg").html("<font color='red'>Please use lowercase, uppercase letters and numbers.</font>");
+                                return false;
+                            }
+                        }
+                    </script>
+                </div>
+
+
+                <!-- button -->
+                <div>
+                    <span class="submitBtn ffJosefin">
+                        <button type="submit">Submit</button>
+                    </span>
+                    <span class="discardBtn ffJosefin">
+                        <a href="member.php"><button type="button">Discard</button></a>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

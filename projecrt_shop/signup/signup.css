@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+/* Sign Up */
+.formSec {
+    color: #121212;
+    background-color: #efefef;
+}
+
+form {
+    width: 55%;
+    margin: 0 auto;
+}
+
+form .labelname {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px !important;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+form .radio {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.memo {
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    color: #808080;
+}
+
+.show {
+    font-family: 'Roboto', sans-serif;
+    font-size: small;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="password"] {
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.addrSelect {
+    display: flex;
+}
+
+.form-select {
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    width: 35%;
+}
+
+option {
+    width: 40px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    width: 40%;
+}
+
+input[type="radio"] {
+    font-weight: 100;
+    width: 16px;
+    height: 16px;
+    vertical-align: baseline;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 18px auto;
+}
+
+.submitBtn {
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    background-color: #59ab6e;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+.discardBtn {
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    background-color: #212934;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+}
